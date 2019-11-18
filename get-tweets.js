@@ -1,7 +1,25 @@
 const Twitter = require('twitter');
 const config = require('./config.js');
 const fs = require('fs');
+const path = require('path');
 const T = new Twitter(config);
+const {Storage} = require('@google-cloud/storage');
+const gc = new Storage({
+  keyFilename: path.join(__dirname, '487ehlingergmproject-8bfa8927b9ce.json'),
+  projectId: 'ehlingergmproject'
+});
+
+// gc.getBuckets().then(x => console.log(x));
+
+const stream     = require('stream'),
+      dataStream = new stream.PassThrough(),
+      gcFile     = gc.bucket('api-project-jpge').file('tweets.json')
+
+
+// name of GCS bucket
+const storageBucket = gc.bucket('api-project-jpge');
+//console.log(storageBucket);
+
 
 console.log("Launching twitter-bot script");
 
@@ -36,9 +54,30 @@ T.get('search/tweets', params, (err, data, response) => {
 
   console.log(tweets);
   completeData=JSON.stringify(tweets);
-  fs.writeFileSync('tweets.json', completeData);
+  // fs.writeFileSync('tweets.json', completeData);
   console.log(completeData);
   console.log("----- saved as tweets.json -----");
+
+  //saving file to GCS
+  dataStream.push(completeData)
+  dataStream.push(null)
+
+  function saveFile(){
+    console.log('saving file...');
+  return new Promise((resolve, reject) => {
+    dataStream.pipe(gcFile.createWriteStream({
+      resumable  : false,
+      validation : false,
+      metadata   : {'Cache-Control': 'public, max-age=31536000'}
+    }))
+
+    })
+    }
+
+    
+    saveFile();
+    console.log("saved to GCS");
+    console.log("https://storage.cloud.google.com/teaching-api/tweets.json");
 
   // tweetsId.map(tweetId => {
   //   T.post('favorites/create', tweetId, (err, response) => {
@@ -52,4 +91,6 @@ T.get('search/tweets', params, (err, data, response) => {
   //
   //   });
   // });
+
+
 })
