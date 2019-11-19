@@ -1,0 +1,62 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Alata', sans-serif;
+}
+
+.header {
+  background-color: #A67D4B;
+  color: white;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.npslogo {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+.tabheader {
+  display: flex;
+  justify-content: center;
+  background-color: #A64B29;
+}
+
+.footer {
+  background-color: #A67D4B;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.npsslogan {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin: 20px;
+}
+
+.npslogofooter {
+  width: 100%;
+  max-width: 50px;
+  height: auto;
+  margin: 20px;
+}
