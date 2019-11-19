@@ -46,14 +46,22 @@
 
       <div id="TweetAPI" class="w3-container city" style="display:none">
         <h2>Twitter API</h2>
+        <div id="tweets"></div>
       </div>
 
       <div id="ImageAPI" class="w3-container city" style="display:none">
-        <h2>Image API</h2>
+        <h2>Youtube API</h2>
+        <div class="row videos">
+          <button onclick="authenticate().then(loadClient)">authorize and load</button>
+          <button onclick="execute()">execute</button>
+          <div id="results"></div>
+          <div id="videos"></div>
+        </div>
       </div>
 
       <div id="MapAPI" class="w3-container city" style="display:none">
         <h2>Google Map API</h2>
+        <div id="map"></div>
       </div>
     </div>
 
