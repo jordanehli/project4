@@ -1,5 +1,3 @@
-<script src="https://apis.google.com/js/api.js"></script>
-<script>
   /**
    * Sample JavaScript code for youtube.search.list
    * See instructions for running APIs Explorer code samples locally:
@@ -34,6 +32,3 @@
   gapi.load("client:auth2", function() {
     gapi.auth2.init({client_id: "78599238566-cc5d6q365fl532409jtf667lvl094d8j.apps.googleusercontent.com"});
   });
-</script>
-<button onclick="authenticate().then(loadClient)">authorize and load</button>
-<button onclick="execute()">execute</button>
