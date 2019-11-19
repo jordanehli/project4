@@ -60,3 +60,10 @@ h1 {
   height: auto;
   margin: 20px;
 }
+
+
+
+/* API Styling */
+.map {
+  height: 600px;
+}
