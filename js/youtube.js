@@ -14,7 +14,7 @@ function authenticate() {
   function execute() {
     return gapi.client.youtube.search.list({
       "part": "snippet",
-      //"q": "#baseball"
+      "q": "#zionnationalpark"
       "channelId": "UCHd62-u_v4DvJ8TCFtpi4GA"
     })
         .then(function(response) {

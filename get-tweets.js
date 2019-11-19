@@ -25,7 +25,7 @@ console.log("Launching twitter-bot script");
 
 // Set up your search parameters
 const params = {
-  q: '#unc',
+  q: '#zionnationalpark',
   count: 10,
   result_type: 'recent',
   lang: 'en'
@@ -74,7 +74,7 @@ T.get('search/tweets', params, (err, data, response) => {
     })
     }
 
-    
+
     saveFile();
     console.log("saved to GCS");
     console.log("https://storage.cloud.google.com/teaching-api/tweets.json");
