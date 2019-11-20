@@ -66,6 +66,7 @@ h1 {
 /* API Styling */
 .map {
   height: 600px;
+  padding-top: 20px;
 }
 
 #map {
