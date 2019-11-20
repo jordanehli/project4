@@ -74,6 +74,7 @@ button {
 
 #ImageAPI {
   padding: 30px;
+  overflow: scroll;
 }
 
 .profile {
