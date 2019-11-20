@@ -20,9 +20,8 @@ function parseTweets(data) {
   var html = "";
   var text = "";
   var profileImage = [];
-  var len = tempPath.length;
 
-  for (var i=0; i<len; ++i) {
+  for (var i=0; len=tempPath.length; i<len; ++i) {
     tweets.push(tempPath[i]);
 
     html += '<div class="profile"><img src=' + tweets[i]["profileImage"] + ' /><h3>' + tweets[i]["screenName"] +'</h3></div>';
