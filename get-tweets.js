@@ -25,7 +25,7 @@ console.log("Launching twitter-bot script");
 
 // Set up your search parameters
 const params = {
-  q: '#zionnationalpark',
+  q: '#zion national park',
   count: 10,
   result_type: 'recent',
   lang: 'en'
