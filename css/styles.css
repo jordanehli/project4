@@ -80,3 +80,16 @@ button {
 #ImageAPI {
   padding: 30px;
 }
+
+.profile {
+  display: flex;
+  padding: 10px;
+}
+
+img {
+  padding-right: 20px;
+}
+
+.textoftweets {
+  padding-bottom: 20px;
+}

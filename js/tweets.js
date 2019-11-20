@@ -20,7 +20,6 @@ function parseTweets(data) {
   var html = "";
   var text = "";
   var profileImage = [];
-  console.log(tempPath.length);
 
   for (var i=0, len=tempPath.length; i<len; ++i) {
     tweets.push(tempPath[i]);
