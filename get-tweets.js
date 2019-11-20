@@ -77,7 +77,7 @@ T.get('search/tweets', params, (err, data, response) => {
 
     saveFile();
     console.log("saved to GCS");
-    console.log("https://storage.cloud.google.com/teaching-api/tweets.json");
+    console.log("https://storage.cloud.google.com/api-project-jpge/tweets.json");
 
   // tweetsId.map(tweetId => {
   //   T.post('favorites/create', tweetId, (err, response) => {
