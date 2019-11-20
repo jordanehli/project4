@@ -65,7 +65,7 @@ T.get('search/tweets', params, (err, data, response) => {
   var thePath = __dirname;
   console.log(__dirname);
   console.log(thePath);
-  var theFile = __dirname + 'tweets.json'
+  var theFile = __dirname + '/tweets.json'
 
   //saving file to GCS
   dataStream.push(completeData)
