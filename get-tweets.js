@@ -2,7 +2,6 @@ const Twitter = require('twitter');
 const config = require('./config.js');
 const fs = require('fs');
 const path = require('path');
-const T = new Twitter(config);
 const {Storage} = require('@google-cloud/storage');
 const gc = new Storage({
   keyFilename: path.join(__dirname, '487ehlingergmproject-8bfa8927b9ce.json'),
@@ -20,7 +19,7 @@ const stream     = require('stream'),
 const storageBucket = gc.bucket('api-project-jpge');
 //console.log(storageBucket);
 
-
+const T = new Twitter(config);
 console.log("Launching twitter-bot script");
 
 // Set up your search parameters
@@ -39,24 +38,34 @@ T.get('search/tweets', params, (err, data, response) => {
   }
 
   // Loop through the returned tweets
-  const tweetsId = data.statuses
-    .map(tweet => ({ id: tweet.id_str }));
+  // const tweetsId = data.statuses
+  //   .map(tweet => ({ id: tweet.id_str }));
 
 
   var tweets = [];
   for (var i=0; i<data.statuses.length; i++){
     console.log(data.statuses[i].text);
 
-    tweets.push({id: data.statuses[i].id_str, screenName: data.statuses[i].user.screen_name, profileImage: data.statuses[i].user.profile_image_url_https, text: data.statuses[i].text});
+    tweets.push({id: data.statuses[i].id_str, text: data.statuses[i].text});
+    var id = { id: data.statuses[i].id_str }
+
+
+    // tweets.push({id: data.statuses[i].id_str, screenName: data.statuses[i].user.screen_name, profileImage: data.statuses[i].user.profile_image_url_https, text: data.statuses[i].text});
     // var id = {id: data.statuses[i].id_str}
 
   };
 
-  console.log(tweets);
-  completeData=JSON.stringify(tweets);
-  // fs.writeFileSync('tweets.json', completeData);
-  console.log(completeData);
-  console.log("----- saved as tweets.json -----");
+  // console.log(tweets);
+  // completeData=JSON.stringify(tweets);
+  // // fs.writeFileSync('tweets.json', completeData);
+  // console.log(completeData);
+  // console.log("----- saved as tweets.json -----");
+
+  completeData = JSON.stringify(tweets);
+  var thePath = __dirname;
+  console.log(__dirname);
+  console.log(thePath);
+  var theFile = __dirname + '/tweets.json'
 
   //saving file to GCS
   dataStream.push(completeData)
