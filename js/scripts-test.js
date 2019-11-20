@@ -18,5 +18,5 @@ console.log('loadData')
 
 function parseData(data){
   console.log(data);
-  $("#videos").html(data);
+  $("#tweets").html(data);
   }
