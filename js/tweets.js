@@ -20,7 +20,7 @@ function parseTweets(data) {
   // var text = "";
   // var profileImage = [];
 
-  for (var i=0, len=tempPath.length; i<len; ++i) {
+  for (var i=0, i<length; ++i) {
     dataObj = $.parseJSON(tweets);
     // tweets.push(tempPath[i]);
 
