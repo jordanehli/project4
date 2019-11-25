@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+  var url="https://www.googleapis.com/download/storage/v1/b/api-project-jpge/o/tweets.json?alt=media"
     loadTweets();
 });
 
