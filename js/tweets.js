@@ -8,7 +8,7 @@ function loadTweets(){
 
     $.ajax({
             type:"GET",
-            url:"tweets.json",
+            url: url,
             dataType:"json",
             success: parseTweets
 });
