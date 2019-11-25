@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const {Storage} = require('@google-cloud/storage');
 const gc = new Storage({
-  keyFilename: path.join(__dirname, '487ehlingergmproject-8bfa8927b9ce.json'),
+  keyFilename: path.join(__dirname, '487ehlingergmproject-673da8653bfe.json'),
   projectId: 'ehlingergmproject'
 });
 
