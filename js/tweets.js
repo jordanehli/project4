@@ -21,10 +21,11 @@ function parseTweets(data) {
   var profileImage = [];
 
   for (var i=0, len=tempPath.length; i<len; ++i) {
+    dataObj = $.parseJSON(tweets);
     tweets.push(tempPath[i]);
 
-    html += '<div class="profile"><img src=' + [i]["profileImage"] + ' /><h3>' + [i]["screenName"] +'</h3></div>';
-    html += '<p class="textoftweets">' + [i]["text"] + '<p>';
+    html += '<div class="profile"><img src=' + dataObj[i]["profileImage"] + ' /><h3>' + dataObj[i]["screenName"] +'</h3></div>';
+    html += '<p class="textoftweets">' + dataObj[i]["text"] + '<p>';
 }
 
 $("#tweets").html(html);
