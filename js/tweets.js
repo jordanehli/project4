@@ -8,7 +8,7 @@ function loadTweets(){
     $.ajax({
             type:"GET",
             url: "https://www.googleapis.com/download/storage/v1/b/api-project-jpge/o/tweets.json?alt=media",
-            dataType:"json",
+            dataType:"text",
             success: parseTweets
 });
 
