@@ -15,12 +15,12 @@ function loadTweets(){
 }
 
 function parseTweets(data) {
-  // var tempPath = data["tweets"];
-  // var html = "";
-  // var text = "";
-  // var profileImage = [];
+  var tempPath = data["tweets"];
+  var html = "";
+  var text = "";
+  var profileImage = [];
 
-  for (var i=0, i<dataObj.length; ++i) {
+  for (var i=0, len=tempPath.length; i<len; ++i) {
     dataObj = $.parseJSON(tweets);
     // tweets.push(tempPath[i]);
 
