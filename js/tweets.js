@@ -22,7 +22,7 @@ function parseTweets(data) {
 
   for (var i=0, len=tempPath.length; i<len; ++i) {
     dataObj = $.parseJSON(tweets);
-    // tweets.push(tempPath[i]);
+    tweets.push(tempPath[i]);
 
     html += '<div class="profile"><img src=' + dataObj[i]["profileImage"] + ' /><h3>' + dataObj[i]["screenName"] +'</h3></div>';
     html += '<p class="textoftweets">' + dataObj[i]["text"] + '<p>';
